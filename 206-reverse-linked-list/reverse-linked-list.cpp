@@ -11,14 +11,17 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        ListNode* curr = head;
-        ListNode* prev = NULL;
-        while(curr){
-            ListNode* next = curr->next;
+         ListNode* curr = head;
+         ListNode* prev = NULL;
+
+         while(curr){
+            ListNode*next = curr->next;//store curr next value
             curr->next = prev;
             prev = curr;
             curr = next;
-        }
-        return prev;
+            //so after these further going the curr gonna become null at some point and the head would be the prev value
+
+         }
+         return prev;
     }
 };
